@@ -1,5 +1,7 @@
 package primes;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
 
 import util.StopWatch;
@@ -10,7 +12,9 @@ import util.UnimplementedExercise;
  */
 
 public class PrimesTest {
-	final static int UP_TO = 7000000;
+	final static int UP_TO = 7000000; // change together with NO_PRIMES_UP_TO
+	final static int NO_PRIMES_UP_TO = 476648;
+	
 	static long referenceRuntime = 0;
 	
 	@Test
@@ -48,6 +52,7 @@ public class PrimesTest {
 			if (isP)
 				numberOfPrimes++;
 		System.out.println("#      primes: " + numberOfPrimes);
+		Assert.assertEquals(NO_PRIMES_UP_TO, numberOfPrimes);
 		if (p instanceof LiveResults)
 			System.out.println("# live primes: "
 					+ ((LiveResults<?>) p).resultsCount());
