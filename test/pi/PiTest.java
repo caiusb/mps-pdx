@@ -1,8 +1,9 @@
 package pi;
 
-
 import java.util.Timer;
 import java.util.TimerTask;
+
+import junit.framework.Assert;
 
 import org.junit.Test;
 
@@ -68,9 +69,11 @@ public class PiTest {
 		else
 			System.out.printf("Speed-up: %.2f\n", sequentialRuntime / 1.0
 					/ StopWatch.getRuntime());
+
 		System.out.println("     Real Pi: " + PI);
 		System.out.println("Estimated Pi: " + pi);
 		System.out.println("Delta (times 1,000,000): " + ((pi - PI) * 1000000));
+		Assert.assertEquals(PI, pi, 0.001);
 		System.out.println();
 		timer.cancel();
 	}
