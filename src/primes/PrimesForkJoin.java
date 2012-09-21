@@ -19,8 +19,8 @@ import util.UnimplementedExercise;
 
  4. Now, the program should work but there is no parallelism. Introduce
 	parallelism by forking the computation in compute(). If the size of the task
-	is greater than some threshold, split the task by creating two or more new
-	tasks and pass them to invokeAll().
+	is greater than some threshold, split the task by creating two tasks, 
+	then fork one and compute directly the other.
 
  5. Remove the UnimplementedExercise interface and test the implementation.
 	The performance should be similar to that of the thread pool version.
