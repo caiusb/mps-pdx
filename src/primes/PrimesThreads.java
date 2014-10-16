@@ -16,7 +16,7 @@ import util.UnimplementedExercise;
  	- hint: for simplicity, don't create a boolean array in each thread;
  	simply pass the shared outer one
  4. Remove the UnimplementedExercise interface
- 5. Test using the Driver
+ 5. Test using the PrimesTest JUnit test.
  */
 
 public class PrimesThreads extends PrimesComputation implements
