@@ -33,7 +33,7 @@ public class PrimesTest {
 	}
 	
 	@Test
-	public void testForkJoin() throws Exception {
+	public void test4ForkJoin() throws Exception {
 		test("ForkJoin version", new PrimesForkJoin());
 	}
 	
