@@ -6,31 +6,37 @@ import java.awt.image.MemoryImageSource;
 import util.UnimplementedExercise;
 
 /**
- * ParallelArray implementation.
+ * Java 8 Streams implementation.
  */
 
 /*
-Steps:
-
- 1.	In this step, the aim is to convert the outer "for" loop to a ParallelArray 
-	operation. Unfortunately, currently ParallelArray does not have an operator that can
-	run over a 2D array. Neither does it have an operator that can run a for in parallel
-	without an underlying data structure. Hopefully, these shortcomings will be solved by 
-	time ParallelArray will be included in Java8 next year. In the mean time, we're 
-	going to trick it into working. Create a ParallelLongArray using the static factory 
-	method create(). We use this as an empty shell so that we can run a parallel 
-	operation. Next, replace the outer loop of the algorithm with a 
-	replaceWithMappedIndex() operation  over this array. The operator needs to return a
-	value. We're not going to use that value in any way, so return whichever long constant
-	you like.
-
- 2. Remove the UnimplementedExercise annotation and run the application and
-	see how it performs. Again, it will be slighly slower than the fork-join and 
-	thread pool versions.
-*/
+ * In this exercise the aim is to replace the outer "for" loop with java 8
+ * Stream operations.
+ * 
+ * Steps:
+ * 
+ * 1. Move rgbim1 and rgbim2 at the beginning of the outer loop.
+ * 
+ * 2.Extract the body of the outer loop into a separate method called computeRow(int
+ * row). You can use the extract method refactoring to automate this process.
+ * 
+ * 3. Replace the outer loop with an IntStream with integers from 0 to the
+ * height of the images. The integers represent the image rows that were
+ * previously iterated through by the outer loop.
+ * 
+ * 4. For each integer in the stream (row in the image), apply the previously
+ * extracted .computeRow method. Use the Stream's .forEach method to achieve this.
+ * 
+ * 5.The code should now work correctly in a sequential manner. To parallelize
+ * it, apply the method .parallelize to the int stream before calling .forEach.
+ * 
+ * 6. Remove the UnimplementedExercise annotation and run the application and
+ * see how it performs. Again, it will be slightly slower than the fork-join and
+ * thread pool versions.
+ */
 
 public class BlenderParallel extends Blender implements UnimplementedExercise {
-	
+
 	public BlenderParallel(BufferedImage img1, BufferedImage img2,
 			int[] imageBuffer, MemoryImageSource imageSource) {
 		super(img1, img2, imageBuffer, imageSource);
