@@ -29,7 +29,7 @@ public class PiTest {
 	}
 
 	@Test
-	public void testThreads() throws Exception {
+	public void test2Threads() throws Exception {
 		test("Threads version", new PiThreads());
 	}
 
