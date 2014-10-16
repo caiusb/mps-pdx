@@ -39,7 +39,7 @@ public class PrimesTest {
 	
 	@Test
 	public void testParallel() throws Exception {
-		test("Pool version", new PrimesParallel());
+		test("Stream version", new PrimesParallel());
 	}
 
 	private void test(String version, PrimesComputation p)
