@@ -34,7 +34,7 @@ public class PrimesTest {
 	
 	@Test
 	public void testForkJoin() throws Exception {
-		test("Pool version", new PrimesForkJoin());
+		test("ForkJoin version", new PrimesForkJoin());
 	}
 
 	private void test(String version, PrimesComputation p)
