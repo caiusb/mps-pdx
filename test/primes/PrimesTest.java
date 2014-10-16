@@ -31,7 +31,7 @@ public class PrimesTest {
 	}
 	
 	@Test
-	public void testPool() throws Exception {
+	public void test3Pool() throws Exception {
 		test("Pool version", new PrimesPool());
 	}
 
