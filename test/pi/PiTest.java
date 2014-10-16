@@ -5,7 +5,9 @@ import java.util.TimerTask;
 
 import junit.framework.Assert;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import util.StopWatch;
 import util.UnimplementedExercise;
@@ -18,13 +20,14 @@ import util.UnimplementedExercise;
  * {@link #warmup(PiApproximation)} runs.
  */
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PiTest {
 	private static final double PI = 3.141592653589793238462643383279D;
 	private static final int ITERATIONS = 20000000;
 	private static long sequentialRuntime = 0;
 
 	@Test
-	public void testSequential() throws Exception {
+	public void test1Sequential() throws Exception {
 		test("Sequential version", new PiSequential());
 	}
 
