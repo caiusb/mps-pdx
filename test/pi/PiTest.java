@@ -39,7 +39,7 @@ public class PiTest {
 	}
 
 	@Test
-	public void testLiveSync() throws Exception {
+	public void test4LiveSync() throws Exception {
 		test("Live with sync version", new PiLiveSync());
 	}
 
