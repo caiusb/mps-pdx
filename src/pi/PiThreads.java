@@ -27,7 +27,7 @@ import util.UnimplementedExercise;
  	algorithm in PiApproximationThread to only compute its proportional part of the workload
  8. Iterate the array, average the results, and return the final value. 
  9. Remove UnimplementedExercise from the list of interfaces 10.Test your implementation by 
- 	running the Driver
+ 	running the PiTest JUnit test.
  */
 
 public class PiThreads implements PiApproximation, UnimplementedExercise {
