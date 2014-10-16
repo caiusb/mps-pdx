@@ -23,7 +23,7 @@ import util.UnimplementedExercise;
   
  5. Instead of joining Threads, shutdown() the thread pool and awaitTermination(60, TimeUnit.SECONDS).
  
- 6. Remove the UnimplementedExercise interface and test using the Driver.
+ 6. Remove the UnimplementedExercise interface and test using the PrimesTest JUnit test.
  */
 
 public class PrimesPool extends PrimesComputation implements
