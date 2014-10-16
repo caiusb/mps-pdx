@@ -37,7 +37,7 @@ public class PiTest {
 	}
 
 	@Test
-	public void testLive() throws Exception {
+	public void test3Live() throws Exception {
 		test("Live version", new PiLive());
 	}
 	protected void test(String version, final PiApproximation piApproximation)

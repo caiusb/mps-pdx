@@ -46,7 +46,7 @@ public class PrimesTest {
 	}
 	
 	@Test
-	public void testLive() throws Exception {
+	public void test6Live() throws Exception {
 		test("Live version", new PrimesLive());
 	}
 
