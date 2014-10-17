@@ -2,7 +2,9 @@ package primes;
 
 import junit.framework.Assert;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import util.StopWatch;
 import util.UnimplementedExercise;
@@ -11,6 +13,7 @@ import util.UnimplementedExercise;
  * A driver for testing classes that extend PrimeComputation.
  */
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PrimesTest {
 	final static int UP_TO = 7000000; // change together with NO_PRIMES_UP_TO
 	final static int NO_PRIMES_UP_TO = 476648;
@@ -18,8 +21,13 @@ public class PrimesTest {
 	static long referenceRuntime = 0;
 	
 	@Test
-	public void testSequential() throws Exception {
+	public void test1Sequential() throws Exception {
 		test("Sequential version", new PrimesSequential());
+	}
+	
+	@Test
+	public void test2Threads() throws Exception {
+		test("Threads version", new PrimesThreads());
 	}
 
 	private void test(String version, PrimesComputation p)

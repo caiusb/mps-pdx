@@ -5,7 +5,9 @@ import java.util.TimerTask;
 
 import junit.framework.Assert;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import util.StopWatch;
 import util.UnimplementedExercise;
@@ -13,23 +15,28 @@ import util.UnimplementedExercise;
 /**
  * Tests for PiApproximation implementations.
  * 
- * The tests run all implementations and report, for each of them, the
- * speedup and the approximation. The reported values are obtained after
- * executing two {@link #warmup(PiApproximation)} runs.
+ * The tests run all implementations and report, for each of them, the speedup
+ * and the approximation. The reported values are obtained after executing two
+ * {@link #warmup(PiApproximation)} runs.
  */
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PiTest {
 	private static final double PI = 3.141592653589793238462643383279D;
-	private static long sequentialRuntime;
 	private static final int ITERATIONS = 20000000;
-	
+	private static long sequentialRuntime = 0;
+
 	@Test
-	public void testSequential() throws Exception {
+	public void test1Sequential() throws Exception {
 		test("Sequential version", new PiSequential());
 	}
-	
-	protected void test(String version,
-			final PiApproximation piApproximation) throws Exception {
+
+	@Test
+	public void test2Threads() throws Exception {
+		test("Threads version", new PiThreads());
+	}
+	protected void test(String version, final PiApproximation piApproximation)
+			throws Exception {
 
 		System.out.println(version);
 		System.out.println("-----------------------------");
@@ -58,7 +65,7 @@ public class PiTest {
 					System.out.println("Live value: "
 							+ ((LiveValue) piApproximation).liveValue());
 				}
-			}, 500);
+			}, sequentialRuntime == 0 ? 500 : sequentialRuntime);
 		}
 		double pi = piApproximation.computePi(ITERATIONS);
 		StopWatch.stop();

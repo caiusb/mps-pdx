@@ -28,21 +28,13 @@ public class PiSequential implements PiApproximation {
 	@Override
 	public double computePi(long iterations) {
 		long inside = 0;
-for (int j = 0; j < iterations; j++) {
-x = Math.
-random();
-double y = Math.rand
-
-notNeededAnymore()
-
-double lenght = x * x + y * y;
-//if (lenght < 1.0)
+		for (int j = 0; j < iterations; j++) {
+			double x = Math.random();
+			double y = Math.random();
+			double lenght = x * x + y * y;
+			if (lenght < 1.0)
 				inside++;
 		}
-		return 			
-				
-				
-				
-				((double) inside) / iterations * 4;
+		return ((double) inside) / iterations * 4;
 	}
 }

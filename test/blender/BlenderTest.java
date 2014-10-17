@@ -110,6 +110,10 @@ public class BlenderTest extends JFrame {
 				resultBuffer, resultImageSource);
 		infoPanel.add(getPanelFor("Sequential", sequentialBlender));
 
+		// Threads
+		Blender threadsBlender = new BlenderThreads(img1, img2, resultBuffer,
+				resultImageSource);
+		infoPanel.add(getPanelFor("Threads", threadsBlender));
 
 		return infoPanel;
 	}

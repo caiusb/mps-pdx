@@ -3,7 +3,7 @@ name := "mps"
 
 version := "1.0"
 
-organization := "IBM"
+organization := "com.github.cos"
 
 javaSource in Compile <<= baseDirectory(_ / "src")
 
