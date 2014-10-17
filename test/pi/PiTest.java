@@ -47,7 +47,7 @@ public class PiTest {
 	}
 
 	@Test
-	public void testLiveAtomic() throws Exception {
+	public void test5LiveAtomic() throws Exception {
 		test("Live with atomic version", new PiLiveAtomic());
 	}
 

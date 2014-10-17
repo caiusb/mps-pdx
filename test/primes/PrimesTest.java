@@ -56,7 +56,7 @@ public class PrimesTest {
 	}
 	
 	@Test
-	public void testLiveAtomic() throws Exception {
+	public void test8LiveAtomic() throws Exception {
 		test("Live with atomic version", new PrimesLiveAtomic());
 	}
 
