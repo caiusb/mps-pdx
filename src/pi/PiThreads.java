@@ -26,7 +26,7 @@ import util.UnimplementedExercise;
  6. Iterate the array (different "for" loop) and join() all threads. 7. Adapt the 
  	algorithm in PiApproximationThread to only compute its proportional part of the workload
  8. Iterate the array, average the results, and return the final value. 
- 9. Remove UnimplementedExercise from the list of interfaces 10. Test your implementation by 
+ 9. Remove UnimplementedExercise from the list of interfaces 10.Test your implementation by 
  	running the PiTest JUnit test.
  */
 
