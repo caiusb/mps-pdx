@@ -21,8 +21,9 @@ import util.UnimplementedExercise;
 	the given threads solution to the class below. Merge as necessary.
 
  2. Gather approximate results from the threads in a shared data structure.
-	Make it possible for other concurrent threads to inspect the most up to date 
-	value by calling the liveValue() method.
+ 	Make sure to keep the live value of the number of inside points and the number of
+ 	outside points. Make it possible for other concurrent threads to inspect the most 
+ 	up to date value by calling the liveValue() method.
 
  3. Print out the live of Pi 100ms second after starting the threads, and
 	before the join()s. It will be printed three times due to the warm-up.
