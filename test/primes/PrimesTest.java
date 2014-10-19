@@ -36,12 +36,12 @@ public class PrimesTest {
 	}
 	
 	@Test
-	public void test4ForkJoin() throws Exception {
+	public void testForkJoin() throws Exception {
 		test("ForkJoin version", new PrimesForkJoin());
 	}
 	
 	@Test
-	public void test5Parallel() throws Exception {
+	public void testParallel() throws Exception {
 		test("Stream version", new PrimesParallel());
 	}
 	
