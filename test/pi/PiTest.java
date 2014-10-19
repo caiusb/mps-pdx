@@ -45,6 +45,12 @@ public class PiTest {
 	public void test4LiveSync() throws Exception {
 		test("Live with sync version", new PiLiveSync());
 	}
+
+	@Test
+	public void test5LiveAtomic() throws Exception {
+		test("Live with atomic version", new PiLiveAtomic());
+	}
+
 	protected void test(String version, final PiApproximation piApproximation)
 			throws Exception {
 
