@@ -70,7 +70,7 @@ public class PiTest {
 					System.out.println("Live value: "
 							+ ((LiveValue) piApproximation).liveValue());
 				}
-			}, sequentialRuntime == 0 ? 500 : sequentialRuntime);
+			}, 100, 100); //sequentialRuntime == 0 ? 500 : sequentialRuntime);
 		}
 		double pi = piApproximation.computePi(ITERATIONS);
 		StopWatch.stop();
