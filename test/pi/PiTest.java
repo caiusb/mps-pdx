@@ -40,6 +40,11 @@ public class PiTest {
 	public void test3Live() throws Exception {
 		test("Live version", new PiLive());
 	}
+
+	@Test
+	public void test4LiveSync() throws Exception {
+		test("Live with sync version", new PiLiveSync());
+	}
 	protected void test(String version, final PiApproximation piApproximation)
 			throws Exception {
 
